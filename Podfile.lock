@@ -1,0 +1,16 @@
+PODS:
+  - NMapsMap (3.2.1)
+
+DEPENDENCIES:
+  - NMapsMap
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NMapsMap
+
+SPEC CHECKSUMS:
+  NMapsMap: 432c7f5e90f5c406d52c3137f425143352d78430
+
+PODFILE CHECKSUM: 68cd0e3c142d871977b7d8de4d91699a974353bf
+
+COCOAPODS: 1.5.3

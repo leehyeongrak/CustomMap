@@ -15,6 +15,7 @@
 		397CF6C7224A461D003CC89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C5224A461D003CC89D /* Main.storyboard */; };
 		397CF6C9224A461F003CC89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C8224A461F003CC89D /* Assets.xcassets */; };
 		397CF6CC224A461F003CC89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6CA224A461F003CC89D /* LaunchScreen.storyboard */; };
+		4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		397CF6C8224A461F003CC89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		397CF6CB224A461F003CC89D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		397CF6CD224A461F003CC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1F38C3370670539F3AD571 /* Pods-CustomMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap.debug.xcconfig"; sourceTree = "<group>"; };
+		D960741D9D81B319969F06C4 /* Pods-CustomMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +39,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1205B0DA547D854E2F8C973A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F1F38C3370670539F3AD571 /* Pods-CustomMap.debug.xcconfig */,
+				D960741D9D81B319969F06C4 /* Pods-CustomMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		39730428224BCBF3005F53E5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +71,8 @@
 			children = (
 				397CF6C0224A461D003CC89D /* CustomMap */,
 				397CF6BF224A461D003CC89D /* Products */,
+				1205B0DA547D854E2F8C973A /* Pods */,
+				C29EF11DD153764CE45D4B24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +97,14 @@
 			path = CustomMap;
 			sourceTree = "<group>";
 		};
+		C29EF11DD153764CE45D4B24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 397CF6D0224A461F003CC89D /* Build configuration list for PBXNativeTarget "CustomMap" */;
 			buildPhases = (
+				7BD6B6C15D5C1E6E884BB203 /* [CP] Check Pods Manifest.lock */,
 				397CF6BA224A461D003CC89D /* Sources */,
 				397CF6BB224A461D003CC89D /* Frameworks */,
 				397CF6BC224A461D003CC89D /* Resources */,
+				8D423F08B2EAE2B352A70F75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +172,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7BD6B6C15D5C1E6E884BB203 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CustomMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D423F08B2EAE2B352A70F75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap-frameworks.sh",
+				"${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMapsMap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		397CF6BA224A461D003CC89D /* Sources */ = {
@@ -300,6 +373,7 @@
 		};
 		397CF6D1224A461F003CC89D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F1F38C3370670539F3AD571 /* Pods-CustomMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -318,6 +392,7 @@
 		};
 		397CF6D2224A461F003CC89D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D960741D9D81B319969F06C4 /* Pods-CustomMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
