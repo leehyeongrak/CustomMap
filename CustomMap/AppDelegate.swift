@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -40,7 +40,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+////        if viewController is ViewController {
+////            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "ViewController") {
+////                 tabBarController.present(newVC, animated: true)
+////                print("adsasdasdasdar")
+////                return false
+////            }
+////        }
+//        
+//        if viewController is AddViewController {
+//            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "AddViewController") {
+//                tabBarController.present(newVC, animated: true)
+//                print("good")
+//                return true
+//            }
+//        }
+//        print("Asdadadada")
+//        return true
+//    }
 
 }
 
