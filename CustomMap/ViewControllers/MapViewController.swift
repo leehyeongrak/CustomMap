@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import NMapsMap
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: NMFMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

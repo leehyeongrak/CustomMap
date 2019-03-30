@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="92" id="cQW-bJ-4dq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="92" id="cQW-bJ-4dq" customClass="LocationTableViewCell" customModule="CustomMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cQW-bJ-4dq" id="dfw-9y-hKL">
@@ -59,6 +59,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="locationAddressLabel" destination="JAq-rr-OgT" id="7cT-dg-Bjl"/>
+                                            <outlet property="locationImageView" destination="Zmm-2q-wCP" id="dio-w8-dBM"/>
+                                            <outlet property="locationNameLabel" destination="H14-Ei-VP6" id="qQs-v1-zMN"/>
                                             <segue destination="1Z9-z4-Zki" kind="show" id="2JZ-CP-4NG"/>
                                         </connections>
                                     </tableViewCell>
@@ -75,6 +78,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RoJ-eN-lxz"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gxr-LK-owj" id="mvA-db-VJ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prf-I2-zlQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prf-I2-zlQ" customClass="NMFMapView">
                                 <rect key="frame" x="16" y="104" width="382" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -129,6 +135,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XMk-na-bJK"/>
                     </view>
+                    <connections>
+                        <outlet property="locationAddressLabel" destination="1xs-dG-rFQ" id="vjm-Dz-iHE"/>
+                        <outlet property="locationDescriptionTextView" destination="6UF-nL-6Vn" id="V6z-BA-s7P"/>
+                        <outlet property="locationNameLabel" destination="JaE-GR-ewq" id="6tq-dQ-d98"/>
+                        <outlet property="mapView" destination="prf-I2-zlQ" id="WJE-MB-pFQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YV-to-xZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,11 +207,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="40"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="tappedCancelButton:" destination="UFZ-1Q-Ifd" eventType="touchUpInside" id="9A4-so-ehX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXt-8m-d9S">
                                                 <rect key="frame" x="199" y="0.0" width="183" height="40"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="추가"/>
+                                                <connections>
+                                                    <action selector="tappedAddButton:" destination="UFZ-1Q-Ifd" eventType="touchUpInside" id="CET-Ln-qah"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -261,6 +279,15 @@
                         <viewLayoutGuide key="safeArea" id="sqT-0c-7BN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="add" id="vi5-9S-lkT"/>
+                    <connections>
+                        <outlet property="locationAddressLabel" destination="6u3-hb-KMP" id="Fnu-vP-ZbE"/>
+                        <outlet property="locationDescriptionTextView" destination="tF4-a9-aLu" id="IkM-ec-RVX"/>
+                        <outlet property="locationInfoContainerView" destination="GSv-uL-8WE" id="9mw-gr-mW6"/>
+                        <outlet property="locationNameLabel" destination="mvp-i3-ckE" id="giB-7B-lwz"/>
+                        <outlet property="mapView" destination="mKk-iU-b4t" id="hDi-tf-iY5"/>
+                        <outlet property="resultTableView" destination="HlY-E9-Zt6" id="bjs-vY-cqb"/>
+                        <outlet property="searchTextField" destination="Z5y-1M-WS8" id="o1S-4U-YVu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgJ-3a-8hu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZy-Uh-iDa">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZy-Uh-iDa" customClass="NMFMapView">
                                 <rect key="frame" x="16" y="60" width="382" height="737"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -289,6 +316,9 @@
                         <viewLayoutGuide key="safeArea" id="dsO-bo-HWU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="map" id="8uA-FB-9fe"/>
+                    <connections>
+                        <outlet property="mapView" destination="mZy-Uh-iDa" id="vww-wT-d13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R02-En-DYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

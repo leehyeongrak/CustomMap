@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import NMapsMap
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var mapView: NMFMapView!
+    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var locationAddressLabel: UILabel!
+    @IBOutlet weak var locationDescriptionTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
