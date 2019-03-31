@@ -13,6 +13,7 @@ class AddViewController: UIViewController {
     
     var locationSearchResult: LocationSearchResult?
     var locationSearchResults: Array<Location> = []
+    var markers: Array<NMFMarker> = []
     
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -58,8 +59,6 @@ class AddViewController: UIViewController {
                 guard let searchData = String(data: data!, encoding: .utf8) else {
                     return
                 }
-                print(searchData)
-                
                 if let jsonData = searchData.data(using: .utf8) {
                     let result = try! JSONDecoder().decode(LocationSearchResult.self, from: jsonData)
                     DispatchQueue.main.async {
@@ -70,7 +69,26 @@ class AddViewController: UIViewController {
             task.resume()
         }
     }
-
+    
+    func markOnMapView(result: LocationSearchResult) {
+        for marker in markers {
+            marker.mapView = nil
+        }
+        
+        markers.removeAll()
+        
+        for place in result.places {
+            let marker = NMFMarker()
+            marker.position = NMGLatLng(lat: Double(place.y)!, lng: Double(place.x)!)
+            markers.append(marker)
+        }
+        
+        for marker in markers {
+            marker.mapView = mapView
+        }
+        
+    }
+    
 }
 
 extension AddViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,8 +102,10 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        cell.textLabel?.text = locationSearchResult?.places[indexPath.row].name
-        cell.detailTextLabel?.text = locationSearchResult?.places[indexPath.row].roadAddress
+        guard let place = locationSearchResult?.places[indexPath.row] else { return UITableViewCell() }
+        cell.textLabel?.text = place.name
+        cell.detailTextLabel?.text = place.roadAddress
+        
         return cell
     }
     
@@ -97,6 +117,7 @@ extension AddViewController: UITextFieldDelegate {
         if let text = textField.text {
             searchLocation(keyword: text) { (result) in
                 self.locationSearchResult = result
+                self.markOnMapView(result: self.locationSearchResult!)
                 self.resultTableView.reloadData()
             }
         }
