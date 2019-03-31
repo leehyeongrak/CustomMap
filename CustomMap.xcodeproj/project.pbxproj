@@ -17,7 +17,7 @@
 		397CF6C7224A461D003CC89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C5224A461D003CC89D /* Main.storyboard */; };
 		397CF6C9224A461F003CC89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C8224A461F003CC89D /* Assets.xcassets */; };
 		397CF6CC224A461F003CC89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6CA224A461F003CC89D /* LaunchScreen.storyboard */; };
-		4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */; };
+		4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -395,6 +395,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6843LQ44V6;
 				INFOPLIST_FILE = CustomMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,6 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6843LQ44V6;
 				INFOPLIST_FILE = CustomMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -13,7 +13,10 @@ class AddViewController: UIViewController {
     
     var locationSearchResult: LocationSearchResult?
     var locationSearchResults: Array<Location> = []
+    var selectedPlace: Place?
+    
     var markers: Array<NMFMarker> = []
+    let infoWindow = NMFInfoWindow()
     
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -36,6 +39,7 @@ class AddViewController: UIViewController {
         resultTableView.delegate = self
         resultTableView.dataSource = self
         searchTextField.delegate = self
+        mapView.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,6 +75,22 @@ class AddViewController: UIViewController {
     }
     
     func markOnMapView(result: LocationSearchResult) {
+        
+        let handler: NMFOverlayTouchHandler = { [weak self] (overlay) -> Bool in
+            
+            if let marker = overlay as? NMFMarker {
+                if marker.infoWindow == nil {
+                    let dataSource = NMFInfoWindowDefaultTextSource.data()
+                    dataSource.title = marker.userInfo["title"] as! String
+                    self?.infoWindow.dataSource = dataSource
+                    self?.infoWindow.open(with: marker)
+                } else {
+                    self?.infoWindow.close()
+                }
+            }
+            return true
+        };
+        
         for marker in markers {
             marker.mapView = nil
         }
@@ -79,11 +99,15 @@ class AddViewController: UIViewController {
         
         for place in result.places {
             let marker = NMFMarker()
+            
             marker.position = NMGLatLng(lat: Double(place.y)!, lng: Double(place.x)!)
+            marker.userInfo = ["title": place.name]
+            
             markers.append(marker)
         }
         
         for marker in markers {
+            marker.touchHandler = handler
             marker.mapView = mapView
         }
         
@@ -109,6 +133,20 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        infoWindow.close()
+        selectedPlace = locationSearchResult?.places[indexPath.row]
+        
+        let dataSource = NMFInfoWindowDefaultTextSource.data()
+        dataSource.title = (selectedPlace?.name)!
+        infoWindow.dataSource = dataSource
+        
+        infoWindow.open(with: markers[indexPath.row])
+        
+    }
+    
+    
+    
     
 }
 
@@ -123,5 +161,11 @@ extension AddViewController: UITextFieldDelegate {
         }
         self.view.endEditing(true)
         return true
+    }
+}
+
+extension AddViewController: NMFMapViewDelegate {
+    func didTapMapView(_ point: CGPoint, latLng latlng: NMGLatLng) {
+        infoWindow.close()
     }
 }
