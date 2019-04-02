@@ -349,6 +349,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="로그인"/>
+                                                <connections>
+                                                    <action selector="tappedSignInButton:" destination="937-1c-1d0" eventType="touchUpInside" id="uaa-ah-Jkc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4X-bx-FZM">
                                                 <rect key="frame" x="183" y="0.0" width="167" height="30"/>
@@ -372,6 +375,10 @@
                         <viewLayoutGuide key="safeArea" id="vnl-uL-lD4"/>
                     </view>
                     <navigationItem key="navigationItem" id="5tO-gC-36Y"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="hdh-9R-yaK" id="tlI-HS-x60"/>
+                        <outlet property="passwordTextField" destination="Qyg-mv-Ne2" id="lnC-q1-umx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cep-JB-4XF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
