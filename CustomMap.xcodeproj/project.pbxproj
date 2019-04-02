@@ -17,6 +17,8 @@
 		397CF6C7224A461D003CC89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C5224A461D003CC89D /* Main.storyboard */; };
 		397CF6C9224A461F003CC89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C8224A461F003CC89D /* Assets.xcassets */; };
 		397CF6CC224A461F003CC89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6CA224A461F003CC89D /* LaunchScreen.storyboard */; };
+		39C0930E22530DB60089DA91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0930D22530DB60089DA91 /* LoginViewController.swift */; };
+		39C0931022530DCC0089DA91 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0930F22530DCC0089DA91 /* SignUpViewController.swift */; };
 		4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		397CF6C8224A461F003CC89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		397CF6CB224A461F003CC89D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		397CF6CD224A461F003CC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39C0930D22530DB60089DA91 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		39C0930F22530DCC0089DA91 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1F38C3370670539F3AD571 /* Pods-CustomMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap.debug.xcconfig"; sourceTree = "<group>"; };
 		D960741D9D81B319969F06C4 /* Pods-CustomMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				39730420224BCBA8005F53E5 /* MapViewController.swift */,
 				39730422224BCBB0005F53E5 /* AddViewController.swift */,
 				39730424224BCBD3005F53E5 /* DetailViewController.swift */,
+				39C0930D22530DB60089DA91 /* LoginViewController.swift */,
+				39C0930F22530DCC0089DA91 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 				39730425224BCBD3005F53E5 /* DetailViewController.swift in Sources */,
 				39730423224BCBB0005F53E5 /* AddViewController.swift in Sources */,
 				39730427224BCBEB005F53E5 /* ListViewController.swift in Sources */,
+				39C0930E22530DB60089DA91 /* LoginViewController.swift in Sources */,
 				3937794B22507ACA00866D77 /* LocationSearchResult.swift in Sources */,
+				39C0931022530DCC0089DA91 /* SignUpViewController.swift in Sources */,
 				397CF6C2224A461D003CC89D /* AppDelegate.swift in Sources */,
 				3937794E2250871600866D77 /* Location.swift in Sources */,
 			);
