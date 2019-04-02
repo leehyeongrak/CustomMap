@@ -157,7 +157,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qOi-XS-93J">
                                 <rect key="frame" x="16" y="60" width="382" height="737"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5y-1M-WS8">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="장소를 검색해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Z5y-1M-WS8">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6Ml-74-8JK"/>
@@ -208,16 +208,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-Q5-hNF">
                                         <rect key="frame" x="0.0" y="697" width="382" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ke-Mx-c4f">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="40"/>
-                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="취소"/>
-                                                <connections>
-                                                    <action selector="tappedCancelButton:" destination="UFZ-1Q-Ifd" eventType="touchUpInside" id="9A4-so-ehX"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXt-8m-d9S">
-                                                <rect key="frame" x="199" y="0.0" width="183" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="추가"/>
                                                 <connections>
@@ -234,39 +226,20 @@
                                     <constraint firstItem="mKk-iU-b4t" firstAttribute="height" secondItem="HlY-E9-Zt6" secondAttribute="height" id="71S-ac-6cI"/>
                                 </constraints>
                             </stackView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSv-uL-8WE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSv-uL-8WE">
                                 <rect key="frame" x="16" y="106" width="382" height="309.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvp-i3-ckE">
-                                        <rect key="frame" x="8" y="8" width="110.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가하실 장소를 검색해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPB-ZY-jWc">
+                                        <rect key="frame" x="47.5" y="140.5" width="287.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u3-hb-KMP">
-                                        <rect key="frame" x="8" y="36.5" width="128.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tF4-a9-aLu" userLabel="LocationDescription">
-                                        <rect key="frame" x="8" y="73" width="366" height="228.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="tF4-a9-aLu" secondAttribute="trailing" constant="8" id="5Dx-54-xfN"/>
-                                    <constraint firstItem="mvp-i3-ckE" firstAttribute="top" secondItem="GSv-uL-8WE" secondAttribute="top" constant="8" id="EBH-ug-dlZ"/>
-                                    <constraint firstItem="6u3-hb-KMP" firstAttribute="top" secondItem="mvp-i3-ckE" secondAttribute="bottom" constant="8" id="Wmm-O7-6w4"/>
-                                    <constraint firstItem="tF4-a9-aLu" firstAttribute="leading" secondItem="GSv-uL-8WE" secondAttribute="leading" constant="8" id="bhU-fd-dUc"/>
-                                    <constraint firstAttribute="bottom" secondItem="tF4-a9-aLu" secondAttribute="bottom" constant="8" id="jZn-p4-uNZ"/>
-                                    <constraint firstItem="tF4-a9-aLu" firstAttribute="top" secondItem="6u3-hb-KMP" secondAttribute="bottom" constant="16" id="mFT-9O-RbX"/>
-                                    <constraint firstItem="6u3-hb-KMP" firstAttribute="leading" secondItem="mvp-i3-ckE" secondAttribute="leading" id="yF0-XL-imd"/>
-                                    <constraint firstItem="mvp-i3-ckE" firstAttribute="leading" secondItem="GSv-uL-8WE" secondAttribute="leading" constant="8" id="yJg-j6-dmR"/>
+                                    <constraint firstItem="aPB-ZY-jWc" firstAttribute="centerY" secondItem="GSv-uL-8WE" secondAttribute="centerY" id="SGZ-4U-BMl"/>
+                                    <constraint firstItem="aPB-ZY-jWc" firstAttribute="centerX" secondItem="GSv-uL-8WE" secondAttribute="centerX" id="dib-Yz-Fwg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -285,10 +258,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="add" id="vi5-9S-lkT"/>
                     <connections>
-                        <outlet property="locationAddressLabel" destination="6u3-hb-KMP" id="Fnu-vP-ZbE"/>
-                        <outlet property="locationDescriptionTextView" destination="tF4-a9-aLu" id="IkM-ec-RVX"/>
                         <outlet property="locationInfoContainerView" destination="GSv-uL-8WE" id="9mw-gr-mW6"/>
-                        <outlet property="locationNameLabel" destination="mvp-i3-ckE" id="giB-7B-lwz"/>
                         <outlet property="mapView" destination="mKk-iU-b4t" id="hDi-tf-iY5"/>
                         <outlet property="resultTableView" destination="HlY-E9-Zt6" id="bjs-vY-cqb"/>
                         <outlet property="searchTextField" destination="Z5y-1M-WS8" id="o1S-4U-YVu"/>

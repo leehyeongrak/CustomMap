@@ -25,13 +25,12 @@ class AddViewController: UIViewController {
     @IBOutlet weak var mapView: NMFMapView!
     
     @IBOutlet weak var locationInfoContainerView: UIView!
-    @IBOutlet weak var locationNameLabel: UILabel!
-    @IBOutlet weak var locationAddressLabel: UILabel!
-    @IBOutlet weak var locationDescriptionTextView: UITextView!
     
     @IBAction func tappedAddButton(_ sender: UIButton) {
-    }
-    @IBAction func tappedCancelButton(_ sender: UIButton) {
+        guard let place = selectedPlace else { return }
+        
+        print(place)
+        
     }
     
     override func viewDidLoad() {
@@ -47,8 +46,9 @@ class AddViewController: UIViewController {
     }
     
     func cameraMoveToSearchedLocation() {
-        let lat = Double((locationSearchResult?.places.first?.y)!)
-        let lng = Double((locationSearchResult?.places.first?.x)!)
+        guard let place = locationSearchResult?.places.first else { return }
+        let lat = Double(place.y)
+        let lng = Double(place.x)
         let target = NMGLatLng(lat: lat!, lng: lng!)
         let position = NMFCameraPosition(target, zoom: 13)
         let cameraUpdate = NMFCameraUpdate(position: position)
@@ -56,7 +56,7 @@ class AddViewController: UIViewController {
         self.mapView.moveCamera(cameraUpdate)
     }
     
-    func cameraMoveToSelectedLocation(index: Int) {
+    func cameraMoveToSelectedLocation() {
         let lat = Double((selectedPlace?.y)!)
         let lng = Double((selectedPlace?.x)!)
         let target = NMGLatLng(lat: lat!, lng: lng!)
@@ -104,6 +104,12 @@ class AddViewController: UIViewController {
                     dataSource.title = marker.userInfo["title"] as! String
                     self?.infoWindow.dataSource = dataSource
                     self?.infoWindow.open(with: marker)
+                    self?.selectedPlace = marker.userInfo["place"] as! Place
+                    let indexPath = IndexPath(row: marker.userInfo["index"] as! Int, section: 0)
+                    DispatchQueue.main.async {
+                        self?.resultTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+                        self?.cameraMoveToSelectedLocation()
+                    }
                 } else {
                     self?.infoWindow.close()
                 }
@@ -117,12 +123,11 @@ class AddViewController: UIViewController {
         
         markers.removeAll()
         
-        for place in result.places {
+        for (index, place) in result.places.enumerated() {
             let marker = NMFMarker()
             
             marker.position = NMGLatLng(lat: Double(place.y)!, lng: Double(place.x)!)
-            marker.userInfo = ["title": place.name]
-            
+            marker.userInfo = ["title": place.name, "place": place, "index": index]
             markers.append(marker)
         }
         
@@ -162,7 +167,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         infoWindow.dataSource = dataSource
         
         infoWindow.open(with: markers[indexPath.row])
-        cameraMoveToSelectedLocation(index: indexPath.row)
+        cameraMoveToSelectedLocation()
     }
     
     
@@ -178,6 +183,7 @@ extension AddViewController: UITextFieldDelegate {
                 self.markOnMapView(result: self.locationSearchResult!)
                 self.resultTableView.reloadData()
                 self.cameraMoveToSearchedLocation()
+                self.locationInfoContainerView.isHidden = true
             }
         }
         self.view.endEditing(true)
