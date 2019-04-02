@@ -9,5 +9,6 @@ target 'CustomMap' do
   pod 'NMapsMap'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end
