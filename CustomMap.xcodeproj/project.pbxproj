@@ -17,6 +17,7 @@
 		397CF6C7224A461D003CC89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C5224A461D003CC89D /* Main.storyboard */; };
 		397CF6C9224A461F003CC89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6C8224A461F003CC89D /* Assets.xcassets */; };
 		397CF6CC224A461F003CC89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397CF6CA224A461F003CC89D /* LaunchScreen.storyboard */; };
+		3988889022531118008902CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3988888F22531118008902CC /* GoogleService-Info.plist */; };
 		39C0930E22530DB60089DA91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0930D22530DB60089DA91 /* LoginViewController.swift */; };
 		39C0931022530DCC0089DA91 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0930F22530DCC0089DA91 /* SignUpViewController.swift */; };
 		4ACC764322F3FBBC35D741A1 /* Pods_CustomMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -35,6 +36,7 @@
 		397CF6C8224A461F003CC89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		397CF6CB224A461F003CC89D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		397CF6CD224A461F003CC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3988888F22531118008902CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39C0930D22530DB60089DA91 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39C0930F22530DCC0089DA91 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		582BA345934E5B77B8D6FEFF /* Pods_CustomMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				397CF6C8224A461F003CC89D /* Assets.xcassets */,
 				397CF6CA224A461F003CC89D /* LaunchScreen.storyboard */,
 				397CF6CD224A461F003CC89D /* Info.plist */,
+				3988888F22531118008902CC /* GoogleService-Info.plist */,
 			);
 			path = CustomMap;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				397CF6CC224A461F003CC89D /* LaunchScreen.storyboard in Resources */,
+				3988889022531118008902CC /* GoogleService-Info.plist in Resources */,
 				397CF6C9224A461F003CC89D /* Assets.xcassets in Resources */,
 				397CF6C7224A461D003CC89D /* Main.storyboard in Resources */,
 			);
@@ -225,13 +229,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CustomMap/Pods-CustomMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMapsMap.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
