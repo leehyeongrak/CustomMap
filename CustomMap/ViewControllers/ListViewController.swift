@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ListViewController: UIViewController {
 
@@ -14,11 +15,22 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
-        // Do any additional setup after loading the view.
+        checkUserIsLoggedIn()
     }
     
+    func checkUserIsLoggedIn() {
+        if Auth.auth().currentUser?.uid == nil {
+            perform(#selector(presentLoginViewController), with: nil, afterDelay: 0)
+        }
+    }
 
+    @objc func presentLoginViewController() {
+        if let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
+            let navigationController = UINavigationController(rootViewController: loginViewController)
+            present(navigationController, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

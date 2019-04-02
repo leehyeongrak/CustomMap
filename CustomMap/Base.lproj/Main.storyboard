@@ -322,7 +322,7 @@
         <!--Login View Controller-->
         <scene sceneID="iMt-od-gWS">
             <objects>
-                <viewController id="937-1c-1d0" customClass="LoginViewController" customModule="CustomMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="937-1c-1d0" customClass="LoginViewController" customModule="CustomMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DsX-BL-GHL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
