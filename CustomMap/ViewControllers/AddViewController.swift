@@ -46,6 +46,26 @@ class AddViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func cameraMoveToSearchedLocation() {
+        let lat = Double((locationSearchResult?.places.first?.y)!)
+        let lng = Double((locationSearchResult?.places.first?.x)!)
+        let target = NMGLatLng(lat: lat!, lng: lng!)
+        let position = NMFCameraPosition(target, zoom: 13)
+        let cameraUpdate = NMFCameraUpdate(position: position)
+        cameraUpdate.animation = NMFCameraUpdateAnimation(rawValue: 2)!
+        self.mapView.moveCamera(cameraUpdate)
+    }
+    
+    func cameraMoveToSelectedLocation(index: Int) {
+        let lat = Double((selectedPlace?.y)!)
+        let lng = Double((selectedPlace?.x)!)
+        let target = NMGLatLng(lat: lat!, lng: lng!)
+        let position = NMFCameraPosition(target, zoom: 13)
+        let cameraUpdate = NMFCameraUpdate(position: position)
+        cameraUpdate.animation = NMFCameraUpdateAnimation(rawValue: 2)!
+        self.mapView.moveCamera(cameraUpdate)
+    }
+    
     func searchLocation(keyword: String, completion: @escaping (LocationSearchResult) -> ()) {
         let baseURL = "https://naveropenapi.apigw.ntruss.com/map-place/v1/search?query=\(keyword)&coordinate=127.1054328,37.3595963"
         let searchURL = baseURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -142,7 +162,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         infoWindow.dataSource = dataSource
         
         infoWindow.open(with: markers[indexPath.row])
-        
+        cameraMoveToSelectedLocation(index: indexPath.row)
     }
     
     
@@ -157,6 +177,7 @@ extension AddViewController: UITextFieldDelegate {
                 self.locationSearchResult = result
                 self.markOnMapView(result: self.locationSearchResult!)
                 self.resultTableView.reloadData()
+                self.cameraMoveToSearchedLocation()
             }
         }
         self.view.endEditing(true)
