@@ -23,8 +23,14 @@ class MoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let email = Auth.auth().currentUser?.email
-        self.navigationItem.title = email
+        if let uid = Auth.auth().currentUser?.uid {
+            let ref = Database.database().reference()
+            ref.child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let name = value?["name"] as? String ?? ""
+                self.navigationItem.title = name
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -34,15 +40,4 @@ class MoreViewController: UIViewController {
             present(navigationController, animated: true, completion: nil)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
