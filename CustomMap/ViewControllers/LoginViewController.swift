@@ -20,14 +20,14 @@ class LoginViewController: UIViewController {
         }
         
         if emailText == "" || passwordText == "" {
-            print("필드를 입력해주세요")
+            print("Invalid input")
         } else {
             Auth.auth().signIn(withEmail: emailText, password: passwordText) { (user, error) in
-                print("유우저 \(user)")
                 if error != nil {
                     print(error!)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
                 }
-//                self.dismiss(animated: true, completion: nil)
             }
         }
     }

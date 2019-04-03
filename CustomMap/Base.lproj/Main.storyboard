@@ -422,15 +422,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D3G-Y8-1am">
                                         <rect key="frame" x="0.0" y="184" width="350" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxY-XL-pHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="취소"/>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vo-du-EaI">
-                                                <rect key="frame" x="183" y="0.0" width="167" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="가입"/>
+                                                <state key="normal" title="입력완료"/>
+                                                <connections>
+                                                    <action selector="tappedRegisterButton:" destination="zrg-aK-nM6" eventType="touchUpInside" id="UA8-mB-BiM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -445,6 +443,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NUX-Ul-pr2"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="7nr-dh-blx" id="GE4-yd-lG9"/>
+                        <outlet property="nameTextField" destination="vuC-qK-YHG" id="fch-ad-PDR"/>
+                        <outlet property="passwordConfirmTextField" destination="EaW-U0-YYt" id="LcQ-aa-ubo"/>
+                        <outlet property="passwordTextField" destination="gby-nB-lR9" id="GOD-s5-yFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00D-9H-lOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
