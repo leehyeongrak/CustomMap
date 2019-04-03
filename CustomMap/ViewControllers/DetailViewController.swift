@@ -10,26 +10,37 @@ import UIKit
 import NMapsMap
 
 class DetailViewController: UIViewController {
+    
+    var place: Place?
+    
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationAddressLabel: UILabel!
-    @IBOutlet weak var locationDescriptionTextView: UITextView!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupViews()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupViews() {
+        if let place = place {
+            locationNameLabel.text = place.name
+            locationAddressLabel.text = place.roadAddress
+            phoneNumberLabel.text = place.phoneNumber
+            
+            let target = NMGLatLng(lat: Double(place.y)!, lng: Double(place.x)!)
+            let position = NMFCameraPosition(target, zoom: 13)
+            let cameraUpdate = NMFCameraUpdate(position: position)
+            cameraUpdate.animation = NMFCameraUpdateAnimation(rawValue: 2)!
+            
+            self.mapView.moveCamera(cameraUpdate)
+            
+            let marker = NMFMarker()
+            marker.position = target
+            marker.mapView = mapView
+        }
     }
-    */
-
 }

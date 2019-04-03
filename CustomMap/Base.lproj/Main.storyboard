@@ -53,7 +53,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="JAq-rr-OgT" secondAttribute="trailing" constant="16" id="5b7-hE-zpT"/>
                                                 <constraint firstItem="Zmm-2q-wCP" firstAttribute="centerY" secondItem="dfw-9y-hKL" secondAttribute="centerY" id="KBK-12-aOj"/>
                                                 <constraint firstAttribute="trailing" secondItem="H14-Ei-VP6" secondAttribute="trailing" constant="16" id="KhH-Yp-Wd9"/>
+                                                <constraint firstItem="JAq-rr-OgT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zmm-2q-wCP" secondAttribute="trailing" constant="16" id="OG2-5g-VRg"/>
                                                 <constraint firstItem="JAq-rr-OgT" firstAttribute="bottom" secondItem="Zmm-2q-wCP" secondAttribute="bottom" id="PNm-Jr-W5Z"/>
+                                                <constraint firstItem="H14-Ei-VP6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zmm-2q-wCP" secondAttribute="trailing" constant="16" id="Tzf-tC-bIe"/>
                                                 <constraint firstItem="Zmm-2q-wCP" firstAttribute="leading" secondItem="dfw-9y-hKL" secondAttribute="leading" constant="16" id="qta-GM-IQD"/>
                                                 <constraint firstItem="H14-Ei-VP6" firstAttribute="top" secondItem="Zmm-2q-wCP" secondAttribute="top" id="uiP-93-M7d"/>
                                             </constraints>
@@ -101,51 +103,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prf-I2-zlQ" customClass="NMFMapView">
-                                <rect key="frame" x="16" y="104" width="382" height="269"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaE-GR-ewq">
-                                <rect key="frame" x="16" y="389" width="111" height="21"/>
+                                <rect key="frame" x="16" y="373" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xs-dG-rFQ">
-                                <rect key="frame" x="16" y="418" width="129" height="21"/>
+                                <rect key="frame" x="16" y="402" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6UF-nL-6Vn" userLabel="LocationDescription">
-                                <rect key="frame" x="16" y="455" width="382" height="342"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lro-87-Stw">
+                                <rect key="frame" x="16" y="431" width="110.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XMk-na-bJK" firstAttribute="bottom" secondItem="6UF-nL-6Vn" secondAttribute="bottom" constant="16" id="66h-Qi-V8i"/>
+                            <constraint firstItem="lro-87-Stw" firstAttribute="leading" secondItem="1xs-dG-rFQ" secondAttribute="leading" id="21M-dv-7on"/>
                             <constraint firstItem="JaE-GR-ewq" firstAttribute="top" secondItem="prf-I2-zlQ" secondAttribute="bottom" constant="16" id="9BK-iZ-hzr"/>
                             <constraint firstItem="1xs-dG-rFQ" firstAttribute="leading" secondItem="JaE-GR-ewq" secondAttribute="leading" id="F3Q-kf-yC0"/>
-                            <constraint firstItem="6UF-nL-6Vn" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" constant="16" id="HXV-3p-K32"/>
-                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" secondItem="6UF-nL-6Vn" secondAttribute="trailing" constant="16" id="R6e-C1-Y3Y"/>
-                            <constraint firstItem="JaE-GR-ewq" firstAttribute="leading" secondItem="prf-I2-zlQ" secondAttribute="leading" id="U4c-Oa-0MW"/>
-                            <constraint firstItem="prf-I2-zlQ" firstAttribute="top" secondItem="XMk-na-bJK" secondAttribute="top" constant="16" id="bhn-8w-K4T"/>
-                            <constraint firstItem="prf-I2-zlQ" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" constant="16" id="ddT-hb-mXY"/>
+                            <constraint firstItem="lro-87-Stw" firstAttribute="top" secondItem="1xs-dG-rFQ" secondAttribute="bottom" constant="8" id="FhK-kG-gO3"/>
+                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1xs-dG-rFQ" secondAttribute="trailing" constant="16" id="NHc-Ww-Yoy"/>
+                            <constraint firstItem="JaE-GR-ewq" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" constant="16" id="PN8-nX-cbG"/>
+                            <constraint firstItem="prf-I2-zlQ" firstAttribute="top" secondItem="XMk-na-bJK" secondAttribute="top" id="bhn-8w-K4T"/>
+                            <constraint firstItem="prf-I2-zlQ" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" id="ddT-hb-mXY"/>
                             <constraint firstItem="1xs-dG-rFQ" firstAttribute="top" secondItem="JaE-GR-ewq" secondAttribute="bottom" constant="8" id="gz2-Wd-Ete"/>
-                            <constraint firstItem="6UF-nL-6Vn" firstAttribute="top" secondItem="1xs-dG-rFQ" secondAttribute="bottom" constant="16" id="hWY-aN-fIi"/>
-                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" secondItem="prf-I2-zlQ" secondAttribute="trailing" constant="16" id="q2G-Ie-CZR"/>
+                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaE-GR-ewq" secondAttribute="trailing" constant="16" id="lCQ-mq-3Kl"/>
+                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" secondItem="prf-I2-zlQ" secondAttribute="trailing" id="q2G-Ie-CZR"/>
                             <constraint firstItem="prf-I2-zlQ" firstAttribute="height" secondItem="KuR-Bx-RDH" secondAttribute="height" multiplier="0.3" id="xx7-Qd-bc4"/>
+                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lro-87-Stw" secondAttribute="trailing" constant="16" id="yQY-IX-FR8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XMk-na-bJK"/>
                     </view>
                     <connections>
                         <outlet property="locationAddressLabel" destination="1xs-dG-rFQ" id="vjm-Dz-iHE"/>
-                        <outlet property="locationDescriptionTextView" destination="6UF-nL-6Vn" id="V6z-BA-s7P"/>
                         <outlet property="locationNameLabel" destination="JaE-GR-ewq" id="6tq-dQ-d98"/>
                         <outlet property="mapView" destination="prf-I2-zlQ" id="WJE-MB-pFQ"/>
+                        <outlet property="phoneNumberLabel" destination="lro-87-Stw" id="X1m-Pq-aQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YV-to-xZI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -76,6 +76,15 @@ class ListViewController: UIViewController {
             present(navigationController, animated: true, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? DetailViewController else { return }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let index = indexPath.row
+            vc.place = myPlaces[index]
+        }
+    }
+    
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
