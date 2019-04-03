@@ -8,6 +8,8 @@
 
 import UIKit
 import NMapsMap
+import Firebase
+import FirebaseDatabase
 
 class AddViewController: UIViewController {
     
@@ -27,11 +29,31 @@ class AddViewController: UIViewController {
     @IBOutlet weak var locationInfoContainerView: UIView!
     
     @IBAction func tappedAddButton(_ sender: UIButton) {
-        guard let place = selectedPlace else { return }
         
-        print(place)
+        guard let user = Auth.auth().currentUser, let place = selectedPlace else {
+            let alert = UIAlertController(title: "", message: "장소를 선택해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            return
+        }
         
+        let timestamp = Int(NSDate().timeIntervalSince1970)
+        
+        let values: [String: Any] = ["uid": user.uid, "place": place.nsDictionary, "timestamp": timestamp]
+        
+        let ref = Database.database().reference().child("place")
+        let childRef = ref.childByAutoId()
+        
+        childRef.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
     @IBAction func tappedCancelButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

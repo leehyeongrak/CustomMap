@@ -30,6 +30,20 @@ struct Place: Codable {
     var distance: Double
     var sessionId: String
     
+    var dictionary: [String: Any] {
+        return ["name": name,
+                "roadAddress": roadAddress,
+                "jibunAddress": jibunAddress,
+                "phoneNumber": phoneNumber,
+                "x": x,
+                "y": y,
+                "distance": distance,
+                "sessionId": sessionId]
+    }
+    var nsDictionary: NSDictionary {
+        return dictionary as NSDictionary
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name
         case roadAddress = "road_address"
