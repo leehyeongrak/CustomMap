@@ -22,7 +22,11 @@ class MoreViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let uid = Auth.auth().currentUser?.uid {
             let ref = Database.database().reference()
             ref.child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
@@ -31,7 +35,6 @@ class MoreViewController: UIViewController {
                 self.navigationItem.title = name
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     func presentLoginViewController() {

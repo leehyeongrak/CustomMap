@@ -8,21 +8,60 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class ListViewController: UIViewController {
 
+    var myPlaces: Array<Place> = []
+    var currentUID: String? {
+        willSet {
+            if newValue != currentUID {
+                print("새로운 로그인")
+                myPlaces.removeAll()
+                fetchPlaces()
+            }
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func tappedAddButton(_ sender: UIBarButtonItem) {
         if let addViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") {
-//            let navigationController = UINavigationController(rootViewController: addViewController)
             present(addViewController, animated: true, completion: nil)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         checkUserIsLoggedIn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        currentUID = uid
+    }
+    
+    func fetchPlaces() {
+        let ref = Database.database().reference().child("places")
+        
+        ref.observe( .childAdded, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: Any] {
+                
+                if dictionary["uid"] as? String == self.currentUID {
+                    let place = Place(place: dictionary["place"] as! NSDictionary)
+                    self.myPlaces.append(place)
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            
+            
+            
+        }, withCancel: nil)
     }
     
     func checkUserIsLoggedIn() {
@@ -37,17 +76,28 @@ class ListViewController: UIViewController {
             present(navigationController, animated: true, completion: nil)
         }
     }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(myPlaces.count)
+        return myPlaces.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell", for: indexPath) as? LocationTableViewCell else { return UITableViewCell() }
+        let place = myPlaces[indexPath.row]
+        cell.locationNameLabel.text = place.name
+        cell.locationAddressLabel.text = place.roadAddress
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 92
+    }
+    
+    
 }
 
 class LocationTableViewCell: UITableViewCell {
@@ -56,4 +106,17 @@ class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationAddressLabel: UILabel!
     
     
+}
+
+extension Place {
+    init(place : NSDictionary){
+        name = place["name"] as? String ?? ""
+        roadAddress = place["roadAddress"] as? String ?? ""
+        jibunAddress = place["jibunAddress"] as? String ?? ""
+        phoneNumber = place["phoneNumber"] as? String ?? ""
+        x = place["x"] as? String ?? ""
+        y = place["y"] as? String ?? ""
+        distance = place["distance"] as? Double ?? 0
+        sessionId = place["sessionId"] as? String ?? ""
+    }
 }

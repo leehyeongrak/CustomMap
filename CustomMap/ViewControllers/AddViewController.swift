@@ -42,7 +42,7 @@ class AddViewController: UIViewController {
         
         let values: [String: Any] = ["uid": user.uid, "place": place.nsDictionary, "timestamp": timestamp]
         
-        let ref = Database.database().reference().child("place")
+        let ref = Database.database().reference().child("places")
         let childRef = ref.childByAutoId()
         
         childRef.updateChildValues(values) { (error, ref) in
