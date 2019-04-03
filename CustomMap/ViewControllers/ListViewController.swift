@@ -13,6 +13,13 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func tappedAddButton(_ sender: UIBarButtonItem) {
+        if let addViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") {
+//            let navigationController = UINavigationController(rootViewController: addViewController)
+            present(addViewController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkUserIsLoggedIn()

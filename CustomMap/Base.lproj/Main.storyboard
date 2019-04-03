@@ -77,7 +77,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RoJ-eN-lxz"/>
+                    <navigationItem key="navigationItem" id="RoJ-eN-lxz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MTo-65-TNa">
+                            <connections>
+                                <action selector="tappedAddButton:" destination="BYZ-38-t0r" id="1P9-hZ-1bG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Gxr-LK-owj" id="mvA-db-VJ5"/>
                     </connections>
@@ -208,8 +214,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-Q5-hNF">
                                         <rect key="frame" x="0.0" y="746" width="382" height="40"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IE-To-ALK">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="40"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="tappedCancelButton:" destination="UFZ-1Q-Ifd" eventType="touchUpInside" id="yEb-rC-zrN"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXt-8m-d9S">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                                <rect key="frame" x="199" y="0.0" width="183" height="40"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="추가"/>
                                                 <connections>

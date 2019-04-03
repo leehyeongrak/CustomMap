@@ -32,6 +32,9 @@ class AddViewController: UIViewController {
         print(place)
         
     }
+    @IBAction func tappedCancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
