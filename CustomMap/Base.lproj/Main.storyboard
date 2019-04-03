@@ -106,20 +106,14 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaE-GR-ewq">
-                                <rect key="frame" x="16" y="373" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xs-dG-rFQ">
-                                <rect key="frame" x="16" y="402" width="129" height="21"/>
+                                <rect key="frame" x="16" y="373" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lro-87-Stw">
-                                <rect key="frame" x="16" y="431" width="110.5" height="21"/>
+                                <rect key="frame" x="16" y="402" width="110.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,15 +122,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lro-87-Stw" firstAttribute="leading" secondItem="1xs-dG-rFQ" secondAttribute="leading" id="21M-dv-7on"/>
-                            <constraint firstItem="JaE-GR-ewq" firstAttribute="top" secondItem="prf-I2-zlQ" secondAttribute="bottom" constant="16" id="9BK-iZ-hzr"/>
-                            <constraint firstItem="1xs-dG-rFQ" firstAttribute="leading" secondItem="JaE-GR-ewq" secondAttribute="leading" id="F3Q-kf-yC0"/>
+                            <constraint firstItem="1xs-dG-rFQ" firstAttribute="top" secondItem="prf-I2-zlQ" secondAttribute="bottom" constant="16" id="DPO-W4-s85"/>
                             <constraint firstItem="lro-87-Stw" firstAttribute="top" secondItem="1xs-dG-rFQ" secondAttribute="bottom" constant="8" id="FhK-kG-gO3"/>
                             <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1xs-dG-rFQ" secondAttribute="trailing" constant="16" id="NHc-Ww-Yoy"/>
-                            <constraint firstItem="JaE-GR-ewq" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" constant="16" id="PN8-nX-cbG"/>
+                            <constraint firstItem="1xs-dG-rFQ" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" constant="16" id="TUS-vw-BGE"/>
                             <constraint firstItem="prf-I2-zlQ" firstAttribute="top" secondItem="XMk-na-bJK" secondAttribute="top" id="bhn-8w-K4T"/>
                             <constraint firstItem="prf-I2-zlQ" firstAttribute="leading" secondItem="XMk-na-bJK" secondAttribute="leading" id="ddT-hb-mXY"/>
-                            <constraint firstItem="1xs-dG-rFQ" firstAttribute="top" secondItem="JaE-GR-ewq" secondAttribute="bottom" constant="8" id="gz2-Wd-Ete"/>
-                            <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaE-GR-ewq" secondAttribute="trailing" constant="16" id="lCQ-mq-3Kl"/>
                             <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" secondItem="prf-I2-zlQ" secondAttribute="trailing" id="q2G-Ie-CZR"/>
                             <constraint firstItem="prf-I2-zlQ" firstAttribute="height" secondItem="KuR-Bx-RDH" secondAttribute="height" multiplier="0.3" id="xx7-Qd-bc4"/>
                             <constraint firstItem="XMk-na-bJK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lro-87-Stw" secondAttribute="trailing" constant="16" id="yQY-IX-FR8"/>
@@ -145,7 +136,6 @@
                     </view>
                     <connections>
                         <outlet property="locationAddressLabel" destination="1xs-dG-rFQ" id="vjm-Dz-iHE"/>
-                        <outlet property="locationNameLabel" destination="JaE-GR-ewq" id="6tq-dQ-d98"/>
                         <outlet property="mapView" destination="prf-I2-zlQ" id="WJE-MB-pFQ"/>
                         <outlet property="phoneNumberLabel" destination="lro-87-Stw" id="X1m-Pq-aQH"/>
                     </connections>

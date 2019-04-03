@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     var place: Place?
     
     @IBOutlet weak var mapView: NMFMapView!
-    @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationAddressLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
@@ -27,7 +26,8 @@ class DetailViewController: UIViewController {
     
     func setupViews() {
         if let place = place {
-            locationNameLabel.text = place.name
+            navigationItem.title = place.name
+            
             locationAddressLabel.text = place.roadAddress
             phoneNumberLabel.text = place.phoneNumber
             
