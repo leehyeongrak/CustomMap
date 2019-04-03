@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qOi-XS-93J">
-                                <rect key="frame" x="16" y="60" width="382" height="737"/>
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="장소를 검색해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Z5y-1M-WS8">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
@@ -167,7 +167,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HlY-E9-Zt6">
-                                        <rect key="frame" x="0.0" y="46" width="382" height="309.5"/>
+                                        <rect key="frame" x="0.0" y="46" width="382" height="334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="dX5-kL-zN4" detailTextLabel="CUy-HV-LsW" style="IBUITableViewCellStyleSubtitle" id="iXK-aE-sVD">
@@ -197,7 +197,7 @@
                                         </prototypes>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKk-iU-b4t" customClass="NMFMapView">
-                                        <rect key="frame" x="0.0" y="371.5" width="382" height="309.5"/>
+                                        <rect key="frame" x="0.0" y="396" width="382" height="334"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
@@ -206,7 +206,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-Q5-hNF">
-                                        <rect key="frame" x="0.0" y="697" width="382" height="40"/>
+                                        <rect key="frame" x="0.0" y="746" width="382" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXt-8m-d9S">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -227,10 +227,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSv-uL-8WE">
-                                <rect key="frame" x="16" y="106" width="382" height="309.5"/>
+                                <rect key="frame" x="16" y="106" width="382" height="334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가하실 장소를 검색해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPB-ZY-jWc">
-                                        <rect key="frame" x="47.5" y="140.5" width="287.5" height="29"/>
+                                        <rect key="frame" x="47.5" y="152.5" width="287.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgJ-3a-8hu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="448"/>
+            <point key="canvasLocation" x="1986" y="448"/>
         </scene>
         <!--map-->
         <scene sceneID="nmr-j3-yTY">
@@ -297,7 +297,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R02-En-DYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="1119"/>
+            <point key="canvasLocation" x="1074" y="461"/>
+        </scene>
+        <!--More View Controller-->
+        <scene sceneID="qmH-1w-pwy">
+            <objects>
+                <viewController id="f28-56-gJ9" customClass="MoreViewController" customModule="CustomMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A9i-gU-eAG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jQr-bA-JOb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dvh-G7-MTP">
+                        <barButtonItem key="rightBarButtonItem" title="로그아웃" id="t4o-bq-Lab">
+                            <connections>
+                                <action selector="tappedLogoutButton:" destination="f28-56-gJ9" id="kbz-ZJ-bzT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qb-Ee-v5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.057971014493" y="1144.4196428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="T5F-uC-dPT">
@@ -311,8 +333,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="GEs-pG-XPb" kind="relationship" relationship="viewControllers" id="3hv-Ej-YU3"/>
-                        <segue destination="UFZ-1Q-Ifd" kind="relationship" relationship="viewControllers" id="ydj-jz-5eh"/>
                         <segue destination="67A-Rp-e9F" kind="relationship" relationship="viewControllers" id="d7F-al-tLY"/>
+                        <segue destination="18E-gS-a2A" kind="relationship" relationship="viewControllers" id="iwX-BN-Mj4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwO-DJ-pXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,6 +512,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEO-Bm-olA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073.913043478261" y="-1116.2946428571429"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="NF3-rf-NVg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="18E-gS-a2A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="udr-Wy-yra"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fx0-YF-aXn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f28-56-gJ9" kind="relationship" relationship="rootViewController" id="iiM-XU-kKP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ym1-Et-C4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073.913043478261" y="1144.4196428571429"/>
         </scene>
     </scenes>
 </document>

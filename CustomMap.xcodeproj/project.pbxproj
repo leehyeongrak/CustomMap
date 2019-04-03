@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		392E85402254794800EB2141 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E853F2254794800EB2141 /* MoreViewController.swift */; };
 		3937794B22507ACA00866D77 /* LocationSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937794A22507ACA00866D77 /* LocationSearchResult.swift */; };
 		3937794E2250871600866D77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937794D2250871500866D77 /* Location.swift */; };
 		39730421224BCBA8005F53E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39730420224BCBA8005F53E5 /* MapViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		392E853F2254794800EB2141 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		3937794A22507ACA00866D77 /* LocationSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResult.swift; sourceTree = "<group>"; };
 		3937794D2250871500866D77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		39730420224BCBA8005F53E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				39730424224BCBD3005F53E5 /* DetailViewController.swift */,
 				39C0930D22530DB60089DA91 /* LoginViewController.swift */,
 				39C0930F22530DCC0089DA91 /* SignUpViewController.swift */,
+				392E853F2254794800EB2141 /* MoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				39730423224BCBB0005F53E5 /* AddViewController.swift in Sources */,
 				39730427224BCBEB005F53E5 /* ListViewController.swift in Sources */,
 				39C0930E22530DB60089DA91 /* LoginViewController.swift in Sources */,
+				392E85402254794800EB2141 /* MoreViewController.swift in Sources */,
 				3937794B22507ACA00866D77 /* LocationSearchResult.swift in Sources */,
 				39C0931022530DCC0089DA91 /* SignUpViewController.swift in Sources */,
 				397CF6C2224A461D003CC89D /* AppDelegate.swift in Sources */,
