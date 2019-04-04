@@ -55,3 +55,16 @@ struct Place: Codable {
         case sessionId
     }
 }
+
+extension Place {
+    init(place : NSDictionary){
+        name = place["name"] as? String ?? ""
+        roadAddress = place["roadAddress"] as? String ?? ""
+        jibunAddress = place["jibunAddress"] as? String ?? ""
+        phoneNumber = place["phoneNumber"] as? String ?? ""
+        x = place["x"] as? String ?? ""
+        y = place["y"] as? String ?? ""
+        distance = place["distance"] as? Double ?? 0
+        sessionId = place["sessionId"] as? String ?? ""
+    }
+}

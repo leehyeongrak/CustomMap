@@ -14,7 +14,6 @@ import FirebaseDatabase
 class AddViewController: UIViewController {
     
     var locationSearchResult: LocationSearchResult?
-    var locationSearchResults: Array<Location> = []
     var selectedPlace: Place?
     
     var markers: Array<NMFMarker> = []
